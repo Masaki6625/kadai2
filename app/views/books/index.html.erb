@@ -5,16 +5,18 @@
     <tr>
       <th>Title</th>
       <th>Body</th>
-      <th>  </th>
+      <th>     </th>
     </tr>
   </thead>
 <% @books.each do |book| %>
-  <tbody>
+  <tbody class="center">
+    <tr>
     <td><%= book.title %></td>
     <td><%= book.body %></td>
     <td><%= link_to "Show" , book_path(book.id) %></td>
     <td><%= link_to "Edit" , edit_book_path(book.id) %></td>
-    <td><%= link_to "Distroy", book_path(book.id) , method: :delete, "date-confirm" => "are you sure?" %></td>
+    <td><%= link_to "Distroy", book_path(book.id) , method: :delete %></td>
+    </tr>
   </tbody>
     <% end %>
   </table>
